@@ -15,7 +15,7 @@ const LogoutButton = () => {
     try {
       // fetch
       const res = await fetch(
-        'https://dhaage-backend.vercel.app/api/users/logout',
+        'https://threads-clone-copy-backend.vercel.app/api/users/logout',
         {
           method: 'POST',
           headers: {

@@ -10,7 +10,7 @@ dotenv.config()
 
 connectDB()
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 
 // middlewares
 app.use(express.json()) //parse JSON data in the req.body
@@ -19,14 +19,15 @@ app.use(cookieParser()) //parse cookies
 var allowedOrigins = [
   'https://dhaage-backend.vercel.app',
   'https://dhaage.vercel.app',
-  'https://dhaage.netlify.app/',
+  'https://threads-clone-copy-backend.vercel.app',
+  'https://dhaage.netlify.app', // Remove trailing slash
   'http://localhost:3000',
 ]
 
 app.use(
   cors({
     origin: allowedOrigins,
-    methods:["POST","GET","DELETE","PUT"],
+    methods: ['POST', 'GET', 'DELETE', 'PUT'],
 
     // exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar'],
 
@@ -37,8 +38,8 @@ app.use(
 // Routes
 app.use('/api/users', userRoutes)
 app.use('/api/posts', postRoutes)
-app.use('/',(req,res)=>{
-  res.send("Hello")
+app.use('/', (req, res) => {
+  res.send('Hello')
 })
 app.listen(PORT, () => {
   console.log(`Server started at http://localhost:${PORT}`)

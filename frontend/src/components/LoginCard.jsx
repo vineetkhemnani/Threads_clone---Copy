@@ -44,7 +44,7 @@ export default function LoginCard() {
   const handleLogin = async () => {
     try {
       const res = await fetch(
-        'https://dhaage-backend.vercel.app/api/users/login',
+        'https://threads-clone-copy-backend.vercel.app/api/users/login',
         {
           method: 'POST',
           headers: {
