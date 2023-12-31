@@ -19,6 +19,7 @@ app.use(cookieParser()) //parse cookies
 var allowedOrigins = [
   'https://dhaage-backend.vercel.app',
   'https://dhaage.vercel.app',
+  'https://threads-clone-copy-frontend.vercel.app',
   'https://threads-clone-copy-backend.vercel.app',
   'https://dhaage.netlify.app', // Remove trailing slash
   'http://localhost:3000',
