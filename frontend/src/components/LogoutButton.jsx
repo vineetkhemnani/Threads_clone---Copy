@@ -14,12 +14,15 @@ const LogoutButton = () => {
   const handleLogout = async () => {
     try {
       // fetch
-      const res = await fetch('/api/users/logout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      const res = await fetch(
+        'https://dhaage-backend.vercel.app/api/users/logout',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
       const data = await res.json()
       console.log(data)
       if (data.error) {

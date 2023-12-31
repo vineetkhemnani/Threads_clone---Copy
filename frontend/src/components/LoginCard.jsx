@@ -43,13 +43,16 @@ export default function LoginCard() {
   //   login handler
   const handleLogin = async () => {
     try {
-      const res = await fetch('/api/users/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(inputs),
-      })
+      const res = await fetch(
+        'https://dhaage-backend.vercel.app/api/users/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(inputs),
+        }
+      )
       const data = await res.json()
 
       if (data.error) {
